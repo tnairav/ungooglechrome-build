@@ -4,12 +4,11 @@ on:
   push:
     branches:
       - master
-# schedule:
-#   # nightly build
-#   - cron: "30 */6 * * *"
+  schedule:
+    - cron: "30 */6 * * *"
 
 jobs:
-  build-linux:
+  build-arch:
 #   timeout-minutes: 1000
     runs-on: ubuntu-20.04
     steps:
