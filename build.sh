@@ -15,6 +15,6 @@ git clone https://aur.archlinux.org/ungoogled-chromium.git
 pushd ungoogled-chromium
 
 chown -R nobody:nobody .
-sudo -u nobody makepkg --noconfirm --noprogressbar
+sudo -u nobody makepkg -j2 --noconfirm --noprogressbar
 rm -rf src pkg
 
