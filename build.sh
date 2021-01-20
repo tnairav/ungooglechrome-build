@@ -2,6 +2,9 @@
 
 set -ex
 
-pacman -Syu --noconfirm
+pacman -Syu --noconfirm base-devel git
 
-echo 1
+git clone https://aur.archlinux.org/ungoogled-chromium.git
+pushd ungoogled-chromium
+
+makepkg -s --noconfirm --noprogressbar
