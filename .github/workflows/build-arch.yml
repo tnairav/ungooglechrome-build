@@ -1,0 +1,40 @@
+name: build-linux
+
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    # nightly build
+    - cron: "30 */6 * * *"
+
+jobs:
+  build-linux:
+    timeout-minutes: 1000
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          docker build -t tmp .
+          # echo Building ${{ steps.latest_release.outputs.tag }}
+          # sudo apt update
+          # sudo apt install --yes libkrb5-dev libssl-dev
+          # wget -O ghcup http://downloads.haskell.org/~ghcup/x86_64-linux-ghcup && chmod +x ghcup
+          # export PATH=~/.cabal/bin:~/.ghcup/bin:$PATH
+          # echo $PATH
+          # ./ghcup install 8.10.2 && ./ghcup set 8.10.2 && ./ghcup install-cabal && mv ghcup ~/.ghcup/bin/ && ghcup upgrade
+          # git clone https://github.com/hasura/graphql-engine.git
+          # cd graphql-engine/server
+          # git checkout -b build ${{ steps.latest_release.outputs.tag }}
+          # cp cabal.project.ci cabal.project.local
+          # cabal v2-update
+          # cabal v2-build -j1
+          # cp `find dist-newstyle/ -name graphql-engine -type f` .
+          # strip graphql-engine
+
+      # - uses: actions/upload-artifact@v2
+        # with:
+          # name: artifacts-linux
+          # path: graphql-engine/server/graphql-engine
+
