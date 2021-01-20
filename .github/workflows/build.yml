@@ -2,8 +2,7 @@ name: build
 
 on:
   push:
-    branches:
-      - master
+    branches: [ main ]
   schedule:
     - cron: "30 */6 * * *"
 
@@ -12,5 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - run:  docker build -t tmp .
+    - name: build in docker
+      run:  docker build --tag buildc .
 
