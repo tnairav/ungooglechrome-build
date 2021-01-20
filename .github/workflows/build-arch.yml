@@ -1,6 +1,5 @@
 name: build-arch
 
-
 on:
   push:
     branches:
@@ -12,11 +11,10 @@ on:
 jobs:
   build-linux:
     timeout-minutes: 1000
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v2
     - run:  docker build -t tmp .
-
 
 #     # - uses: actions/upload-artifact@v2
 #       # with:
