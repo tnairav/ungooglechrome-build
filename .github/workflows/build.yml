@@ -1,4 +1,4 @@
-name: build-arch
+name: build
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
     - cron: "30 */6 * * *"
 
 jobs:
-  build-arch:
+  build:
 #   timeout-minutes: 1000
     runs-on: ubuntu-20.04
     steps:
