@@ -11,10 +11,12 @@ pacman -Syu --noconfirm base-devel git \
     python2-setuptools \
     snappy ffmpeg libwebp minizip opus re2 libxslt
 
+echo 'MAKEFLAGS="-j2"' >> /etc/makepkg.conf
+
 git clone https://aur.archlinux.org/ungoogled-chromium.git
 pushd ungoogled-chromium
 
 chown -R nobody:nobody .
-sudo -u nobody makepkg -j2 --noconfirm --noprogressbar
+sudo -u nobody makepkg --noconfirm --noprogressbar
 rm -rf src pkg
 
