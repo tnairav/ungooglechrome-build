@@ -14,9 +14,8 @@ jobs:
     timeout-minutes: 1000
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: |
-          docker build -t tmp .
+    - uses: actions/checkout@v2
+    - run:  docker build -t tmp .
 
 
 #     # - uses: actions/upload-artifact@v2
